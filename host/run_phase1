@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+host_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+make -C "$host_dir"
+cd "$host_dir"
+exec "$host_dir/.build/bin/phase1_host"
